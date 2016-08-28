@@ -1,0 +1,66 @@
+*{
+margin: 0px;
+padding: 0px;
+font-family: arial;
+font-size: 18px;
+}
+body{
+background: url(http://previews.123rf.com/images/ppbig/ppbig1312/ppbig131200178/24468592-cute-background-of-birds-s-bubble-message-bubble-speech-chat-background-Stock-Vector.jpg) no-repeat center center fixed;
+background-size: cover;
+margin-left: 430px;
+margin-top: 20px;
+}
+h1{
+text-align: center;
+font-size: 27px;
+margin-left: -378px;
+color: white;
+}
+hr{
+width: 500px;
+margin-left: -40px;
+}
+.change{
+font-weight: bold;
+font-size: 18px;
+margin-top: 5px;
+color: #004d00;
+}
+h2{
+color: #0000cc;
+font-style: oblique;
+margin-top: 10px;
+font-size: 15px;
+}
+input[type=submit]{
+margin-left: 37px;
+margin-bottom: 10px;
+}
+textarea{
+margin-bottom: 10px;
+}
+.change1{
+margin-top: 10px;
+color:  #ff0040;
+}
+.change2{
+margin-top: 5px;
+color: #990073;
+}
+.italic{
+font-style: italic;
+}
+a{
+text-decoration: none;
+color: white;
+}
+button{
+height: 22px;
+width: 82px;
+margin-left: 443px;
+margin-top: 20px;
+background-color: grey;
+}
+
+
+

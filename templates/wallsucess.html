@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>My FLASK coding Registration Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chat.css') }}">  
+  </head>
+    <body>
+
+    <h1> CodingDojo Wall </h1>
+    <p class='change'>Welcome User:
+      {% for first_name in all_names%}
+      {% if session['user_id'] == first_name['id']%}
+      {{first_name['first_name']}}
+      {% endif %}
+      {% endfor %}
+     </p>
+    <h2> Post A Message </h2>
+
+    <form action = '/message' method="POST">
+      <textarea name='message'></textarea>
+      <input type ='submit' value ='post a Message'>
+    </form>
+    
+    {% for message in all_messages %}
+      <p class="change2"> {{ message['first_name']}}  {{ message['last_name']}}  {{ message['created_at'].strftime('%A, %B %d, %Y')}}  </p>
+      <p class='italic'> POST: {{message['message']}} </p>
+      <form action='/remove_message' method = "POST">
+        <input type='hidden' name='delete_message' value="{{message['id']}}">
+        <input type = 'submit' value='DELETE'>
+      </form>
+
+      <h2>Comment Post</h2>
+      <form action = "/comment" method="POST">
+        <textarea name = 'add_comment'></textarea>
+        <input type='hidden' value= "{{message['id']}}" name="comments_add">
+        <input type ='submit' name = 'add_comment' value ='post a Comment'>
+      </form>
+
+      {% for comment in comment_messages %}
+        {% if comment['message_id'] == message['id'] %}
+          <p class="change1"> {{ comment['first_name']}} {{ comment['last_name']}} {{ comment['created_at'].strftime('%A, %B %d, %Y')}} </p>
+          <p class='italic'> Comment: {{comment['comment']}}</p><hr>
+        {%endif%}
+      {% endfor %}
+    {% endfor %}
+
+   <button><a href ='/'>Logout</a></button>
+  </body>
+</html>

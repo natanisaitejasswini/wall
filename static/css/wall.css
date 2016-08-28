@@ -1,0 +1,18 @@
+*{
+margin: 0px;
+padding: 0px;
+font-family: arial;
+font-size: 14px;
+}
+body{
+	border: 1px solid black;
+	height: 600px;
+	width: 400px;
+	margin: 56px 95px 57px 200px;
+	padding-left: 20px;
+	padding-top: 20px;
+}
+form{
+padding: 20px;
+}
+
